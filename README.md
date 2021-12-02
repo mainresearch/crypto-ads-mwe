@@ -33,10 +33,11 @@ Ubuntu machine.
 
 ## API Server
 The API endpoints have been tested. Simply running `./api/api.sh` should launch
-the api on 127.0.0.1. You can then go to https://reqbin.com/ and issue API calls
+the api on `127.0.0.1`. You can then go to https://reqbin.com/ and issue API calls
 like so to make sure the service is up. Remember that all calls are POST. You
-may need to install a browser plugin to allow you to call 127.0.0.1
+may need to install a browser plugin to allow you to call `127.0.0.1`.
 
+```
 127.0.0.1:12345/general/click_ad/0/0
 127.0.0.1:12345/general/click_ad/1/0
 127.0.0.1:12345/general/click_ad/2/0
@@ -58,6 +59,7 @@ may need to install a browser plugin to allow you to call 127.0.0.1
 127.0.0.1:12345/general/view_ad/7/0
 127.0.0.1:12345/general/view_ad/8/0
 127.0.0.1:12345/general/view_ad/9/0
+```
 
 ## HTML
 CORS policy will not allow a local copy of a file to make API calls to
