@@ -63,7 +63,7 @@ may need to install a browser plugin to allow you to call `127.0.0.1`.
 
 ## HTML
 CORS policy will not allow a local copy of a file to make API calls to
-127.0.0.1, therefore, launch your browser with web security disabled. In chrome,
+`127.0.0.1`, therefore, launch your browser with web security disabled. In chrome,
 you would issue the following command
 
 ```
@@ -104,9 +104,9 @@ rewards
 # API Service
 ## api.py
 This is the main Flask Python file and it carries out 3 functions
-1. Calls settings.__init__ () to initialize the API
-2. Imports the /click_ad endpoint
-3. Imports the /view_ad endpoint
+1. Calls `settings.__init__ ()` to initialize the API
+2. Imports the `/click_ad` endpoint
+3. Imports the `/view_ad` endpoint
 
 ## settings.py
 This file initializes the API but also has many of the classes which simulate
@@ -123,13 +123,14 @@ classes/types and simply assign advertisement id 0 to our ad. We further assume
 that the ad returns 0.00001 coins/dollars for every call (whether that call is
 on an ad click or view). We then have a few functions
 
-get_ad_reward (): Helper function only
+`get_ad_reward ()`: Helper function only
 
-pay_customer (): Presumably when an ad get's clicked on, somehow we get paid.
+`pay_customer ()`: Presumably when an ad get's clicked on, somehow we get paid.
 This is the purpose of this function, to pay us
 
-get_customer_transactions (): Returns all the times the ad was clicked and we
-were paid. There are multiple variations of this function, but they are 
+`get_customer_transactions ()`: Returns all the times the ad was clicked and we
+were paid. There are multiple variations of this function, but they are all
+similar.
 
 ### CryptUserAccount Class
 Essentially this represents the `user_account` table on the Crypto Advertisement
