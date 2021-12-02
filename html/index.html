@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../src/index.js"></script>
+        <style>
+            html{
+                height:100%;
+            }
+            body{
+                height: 100%;
+                position: relative;
+                background-color:powderblue;
+            }
+            body,.menubar,.main,.footer{
+                padding: 0px;
+                margin: 0px;
+            }
+            .menubar{
+                background-color:yellow;
+                min-height:5%;
+            }
+            .main{
+                min-height:75%;
+            }
+            .main_left, .main_right{
+                width:50%;
+                min-height:100%;
+                float:left;
+            }
+            .main_left{
+                background-color:green;
+            }
+            .main_right{
+                background-color:red;
+            }
+            .footer{
+                background-color:purple;
+                min-height:15%;
+            }
+        </style>
+    </head>
+
+    <body onload="load_page();">
+        <div class='menubar'>
+            <label for="user_ids">Logged In User:</label>
+
+            <select name="user_ids" id="user_ids" onchange="change_user();">
+              <option value="0">User 1</option>
+              <option value="1">User 2</option>
+              <option value="2">User 3</option>
+              <option value="3">User 4</option>
+              <option value="4">User 5</option>
+              <option value="5">User 6</option>
+              <option value="6">User 7</option>
+              <option value="7">User 8</option>
+              <option value="8">User 9</option>
+              <option value="9">User 10</option>
+            </select>
+
+            <label for="simulate_refresh">Simulate a page refresh:</label>
+            <button type="button" id="simulate_refresh" onclick="refresh_images();">Simulate</button>
+
+            <input type="checkbox" id="on_viewing" name="on_viewing" value="on_viewing" checked="true">
+            <label for="on_viewing"> Give reward on viewing</label>
+
+            <input type="checkbox" id="on_clicking" name="on_clicking" value="on_clicking" checked="true">
+            <label for="on_clicking"> Give reward on clicking</label><br>
+        </div>
+        <div class='main'>
+            <div class='main_left'></div>
+            <div class='main_right'>
+                <label for="website_revenue"> Website revenue: </label>
+                <input type="text" id="website_revenue" name="website_revenue" value="0.0" readonly><br>
+
+                <label for="user_0_revenue"> User 1 revenue: </label>
+                <input type="text" id="user_0_revenue" name="user_0_revenue" value="0.0" readonly><br>
+
+                <label for="user_1_revenue"> User 2 revenue: </label>
+                <input type="text" id="user_1_revenue" name="user_1_revenue" value="0.0" readonly><br>
+
+                <label for="user_2_revenue"> User 3 revenue: </label>
+                <input type="text" id="user_2_revenue" name="user_2_revenue" value="0.0" readonly><br>
+
+                <label for="user_3_revenue"> User 4 revenue: </label>
+                <input type="text" id="user_3_revenue" name="user_3_revenue" value="0.0" readonly><br>
+
+                <label for="user_4_revenue"> User 5 revenue: </label>
+                <input type="text" id="user_4_revenue" name="user_4_revenue" value="0.0" readonly><br>
+
+                <label for="user_5_revenue"> User 6 revenue: </label>
+                <input type="text" id="user_5_revenue" name="user_5_revenue" value="0.0" readonly><br>
+
+                <label for="user_6_revenue"> User 7 revenue: </label>
+                <input type="text" id="user_6_revenue" name="user_6_revenue" value="0.0" readonly><br>
+
+                <label for="user_7_revenue"> User 8 revenue: </label>
+                <input type="text" id="user_7_revenue" name="user_7_revenue" value="0.0" readonly><br>
+
+                <label for="user_8_revenue"> User 9 revenue:  </label>
+                <input type="text" id="user_8_revenue" name="user_8_revenue" value="0.0" readonly><br>
+
+                <label for="user_9_revenue"> User 10 revenue: </label>
+                <input type="text" id="user_9_revenue" name="user_9_revenue" value="0.0" readonly><br>
+
+            </div>
+        </div>
+        <div class='footer'>
+            <a href='#' onclick='click_ad();'>
+                <img src="../img/shamwow.jpg" alt="Shamwow">
+            </a>
+        </div>
+    </body>
+</html>
