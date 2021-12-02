@@ -1,5 +1,5 @@
-# crypto-ads-poc
-Proof of concept application for upwork freelancing job requiring an
+# crypto-ads-mwe
+Minimal Working Example (MWE) for upwork freelancing job requiring an
 implementation of Advertisement banners which return revenue in crypto as
 opposed to USD
 
@@ -33,9 +33,9 @@ Ubuntu machine.
 
 ## API Server
 The API endpoints have been tested. Simply running `./api/api.sh` should launch
-the api on `127.0.0.1`. You can then go to https://reqbin.com/ and issue API calls
-like so to make sure the service is up. Remember that all calls are POST. You
-may need to install a browser plugin to allow you to call `127.0.0.1`.
+the api on `127.0.0.1`. You can then go to https://reqbin.com/ and issue API
+calls like so to make sure the service is up. Remember that all calls are POST.
+You may need to install a browser plugin to allow you to call `127.0.0.1`.
 
 ```
 127.0.0.1:12345/general/click_ad/0/0
@@ -63,8 +63,8 @@ may need to install a browser plugin to allow you to call `127.0.0.1`.
 
 ## HTML
 CORS policy will not allow a local copy of a file to make API calls to
-`127.0.0.1`, therefore, launch your browser with web security disabled. In chrome,
-you would issue the following command
+`127.0.0.1`, therefore, launch your browser with web security disabled. In
+chrome, you would issue the following command
 
 ```
 google-chrome --disable-web-security --user-data-dir=~/
@@ -122,7 +122,7 @@ This class represents the hypothentical Crypto Advertisement Service. We ignore
 registration and simply assign user ID 0 to our account and we assume whe are
 the only user they have. Furthermore, we ignore different advertisement
 classes/types and simply assign advertisement id 0 to our ad. We further assume
-that the ad returns 0.00001 coins/dollars for every call (whether that call is
+that the ad returns `0.00001` coins/dollars for every call (whether that call is
 on an ad click or view). We then have a few functions
 
 `get_ad_reward ()`: Helper function only
@@ -153,14 +153,14 @@ facilitate the revenue sharing logic.
 customers. There are a few versions of this, but they are all very similar
 
 ## click_ad.py
-This is the implementation of the /click_on_add/ endpoint. Everytime a logged in
-user clicks on an ad, they call this endpoint, passing to it their user_id and
-the ad_id. To keep the programming simple, we always send 0 for the ad_id.
+This is the implementation of the `/click_on_add/` endpoint. Everytime a logged
+in user clicks on an ad, they call this endpoint, passing to it their user_id
+and the ad_id. To keep the programming simple, we always send 0 for the ad_id.
 
 This function carries out the following actions
 1. Instructs the Crypto Advertisement Service to pay us (the website). We don't
    pretend to know how this works out in real life, but here we use
-   CryptOhAdz.pay_customer ()
+   `CryptOhAdz.pay_customer ()`
 2. We get all the server transactions (website transactions) from the Crypto Ad
    Service. We look at the last, most recent one, to know how much we were paid,
    so we can determine how much of that to share with the user. We also return
@@ -170,12 +170,12 @@ This function carries out the following actions
    /server/revenue`..., but we are cheating here and just returning everything
    and letting the frontend calculate things like the revenue in Pure JS
 3. We then instruct our service (the website) to pay the user
-   (EazyPeazy.pay_customer)
+   (`EazyPeazy.pay_customer`)
 4. We retrieve the user_transactions and return that to the frontend for display
    purposes
 
 ## view_ad.py
-This is the implementation of the /view_add/ endpoint. Everytime a logged in
+This is the implementation of the `/view_add/` endpoint. Everytime a logged in
 user views an ad, they call this endpoint, passing to it their user_id and
 the ad_id. To keep the programming simple, we always send 0 for the ad_id.
 
