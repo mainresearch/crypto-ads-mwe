@@ -145,11 +145,7 @@ then define a ratio of how much of every dollar goes to us versus how much of it
 we give to our users (`house_take`). We then have a few functions to help
 facilitate the revenue sharing logic.
 
-`pay_customer ()`: Records a user_id x ad_id x amount triplicate.
-
-`get_customer_transactions ()`: Returns the transactions we gave out to our
-customers. There are a few versions of this, but they are all very similar
-triplicate.
+`pay_customer ()`: Records `a user_id x ad_id x amount` triplicate.
 
 `get_customer_transactions ()`: Returns the transactions we gave out to our
 customers. There are a few versions of this, but they are all very similar
