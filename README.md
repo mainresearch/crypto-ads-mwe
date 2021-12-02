@@ -74,6 +74,8 @@ https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome
 Once opened, go to `/html/index.html`. All links should now work
 
 # HTML Page
+![Screenshot of webpage](img/screenshot.png?raw=true "Example page")
+
 The entire MWE, and therefore the HTML page, is designed so as to not need a
 database. It is recommended that you always have the developer console open on
 your browser to view all output.
